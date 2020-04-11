@@ -2,7 +2,7 @@
 Tool for export static qc/smd to fbx. for Blender 2.8+
 
 # Necessary
-install Blender Source Tool
+install Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Source_Tools
 
 # Setup
 * 1 Open Blender preferences/addons
@@ -13,5 +13,8 @@ install Blender Source Tool
 * 1 delete everything from the scene, and leave only the cube
 * 2 select cube and go to object/Exporter QC/SMD to FBX
 
+# Main Settings
 
+*lmao
+*who
 
