@@ -25,3 +25,6 @@ install Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Sou
 * 8 Physics Collision - import collision model (`only for SMD method`)
 * 9 Max Files Export - max folders in import path for export 
 * 10 Start Export!
+
+# Warning
+This tool does not import or export animation/ only for static models!
