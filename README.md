@@ -1,5 +1,5 @@
 # Source Blender Exporter
-Tool for export static qc/smd to fbx. for Blender 2.8+
+Tool for export static qc/smd to fbx for Blender 2.8+
 
 # Necessary
 install Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Source_Tools
@@ -15,6 +15,6 @@ install Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Sou
 
 # Main Settings
 
-*lmao
-*who
+* 1 Path to model folder (warning: your models should be sorted into folders each!)
+* 2 who
 
