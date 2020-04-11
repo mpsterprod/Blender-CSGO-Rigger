@@ -27,4 +27,4 @@ install Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Sou
 * 10 Start Export!
 
 # Warning
-This tool does not import or export animation/ only for static models!
+This tool does not import or export animation/ only for models!
