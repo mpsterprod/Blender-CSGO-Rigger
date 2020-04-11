@@ -7,7 +7,7 @@ install Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Sou
 # Setup
 * 1 Open Blender preferences/addons
 * 2 click install 
-* 3 select script .zip/open and activate
+* 3 select script mpSourceExporter.zip/open and activate
 # How it works
 
 * 1 delete everything from the scene, and leave only the cube
