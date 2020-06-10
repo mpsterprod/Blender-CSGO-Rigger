@@ -26,14 +26,12 @@ Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Source_Tool
 * 10 Export
 
 We recommend that you use following settings:
-Rotation:
-90
-0
-0
-Scale
-0.01
-Physics
-Unticked
+Rotation: 90 0 0
+
+Scale: 0.01
+
+Physics: Unticked
+
 
 # Warning
 This tool doesn't import or export animations. Its only for models!
