@@ -137,11 +137,14 @@ def Create_FBX_Export(folder_import=str,folder_export=str,update_rotation=[0,0,0
                                 continue
                             else:
                                 l_smd.append(f_imp+'/'+fffa)
+            if l_smd is None or l_smd == []:
+                continue
             bpy.ops.scene.new(type='NEW')                 # only for .smd !
             bpy.ops.object.delete(use_global=True)
             for imports_SMDS in l_smd:
                 # import physics?
                     bpy.ops.import_scene.smd(filepath = imports_SMDS, doAnim = False)
+                               
             # update rotation
             if update_r:
                 bpy.context.object.rotation_euler[0] = x
