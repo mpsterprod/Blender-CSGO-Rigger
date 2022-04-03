@@ -1,0 +1,137 @@
+/*
+    connect data
+    rig -> connect to ->> Skeleton
+
+    ONLY:
+        BONE -> BONE
+        BONE -> OBJECT
+
+    v.1
+
+    CONNECT_DATA = [
+        'COPY_TRANSFORMS',
+        'COPY_SCALE',
+        'COPY_LOCATION',
+        'COPY_ROTATION',
+        'DRIVER_AVERAGE',
+        'DRIVER_EXPRESSION'
+    ]
+*/
+
+start_block
+// master
+bone "my_csgo_rig" "Master_CTRL" object "root" //COPY_TRANSFORMS//COPY_SCALE
+
+// hips
+bone "my_csgo_rig" "pelvis_connect" bone "root" "pelvis" //COPY_LOCATION//COPY_ROTATION
+
+// spine
+bone "my_csgo_rig" "spine_1_connect" bone "root" "spine_1" //COPY_ROTATION//COPY_LOCATION
+bone "my_csgo_rig" "spine_2_connect"  bone"root" "spine_2" //COPY_ROTATION
+bone "my_csgo_rig" "spine_3_connect" bone "root" "spine_3" //COPY_ROTATION
+bone "my_csgo_rig" "neck_0_connect" bone "root" "neck_0" //COPY_ROTATION
+bone "my_csgo_rig" "head_0_connect" bone "root" "head_0" //COPY_ROTATION
+
+// legs
+bone "my_csgo_rig" "leg_upper_L_connect" bone "root" "leg_upper_L" //COPY_TRANSFORMS
+bone "my_csgo_rig" "leg_lower_L_connect" bone "root" "leg_lower_L" //COPY_TRANSFORMS
+bone "my_csgo_rig" "L_leg_ankle_connect" bone "root" "ankle_L" //COPY_TRANSFORMS
+bone "my_csgo_rig" "L_leg_ball_connect" bone "root" "ball_L" //COPY_ROTATION
+
+bone "my_csgo_rig" "L_LEG_TWIST_UPPER_1" bone "root" "leg_upper_L_TWIST" //COPY_TRANSFORMS
+bone "my_csgo_rig" "L_LEG_TWIST_UPPER_2" bone "root" "leg_upper_L_TWIST1" //COPY_TRANSFORMS
+
+
+bone "my_csgo_rig" "leg_upper_R_connect" bone "root" "leg_upper_R" //COPY_TRANSFORMS
+bone "my_csgo_rig" "leg_lower_R_connect" bone "root" "leg_lower_R" //COPY_TRANSFORMS
+bone "my_csgo_rig" "R_leg_ankle_connect" bone "root" "ankle_R" //COPY_TRANSFORMS
+bone "my_csgo_rig" "R_leg_ball_connect" bone "root" "ball_R" //COPY_ROTATION
+
+bone "my_csgo_rig" "R_LEG_TWIST_UPPER_1" bone "root" "leg_upper_R_TWIST" //COPY_TRANSFORMS
+bone "my_csgo_rig" "R_LEG_TWIST_UPPER_2" bone "root" "leg_upper_R_TWIST1" //COPY_TRANSFORMS
+
+
+// arms
+bone "my_csgo_rig" "clavicle_L_connect" bone "root" "clavicle_L" //COPY_ROTATION
+bone "my_csgo_rig" "arm_upper_L_connect" bone "root" "arm_upper_L" //COPY_TRANSFORMS
+bone "my_csgo_rig" "arm_lower_L_connect" bone "root" "arm_lower_L" //COPY_TRANSFORMS
+bone "my_csgo_rig" "L_Hand_FK_CTRL" bone "root" "hand_L" //COPY_TRANSFORMS
+
+bone "my_csgo_rig" "L_ARM_UPPER_TWIST_1" bone "root" "arm_upper_L_TWIST" //COPY_TRANSFORMS
+bone "my_csgo_rig" "L_ARM_UPPER_TWIST_2" bone "root" "arm_upper_L_TWIST1" //COPY_TRANSFORMS
+
+bone "my_csgo_rig" "L_ARM_LOWER_TWIST_1" bone "root" "arm_lower_L_TWIST" //COPY_TRANSFORMS
+bone "my_csgo_rig" "L_ARM_LOWER_TWIST_2" bone "root" "arm_lower_L_TWIST1" //COPY_TRANSFORMS
+
+
+
+bone "my_csgo_rig" "clavicle_R_connect" bone "root" "clavicle_R" //COPY_ROTATION
+bone "my_csgo_rig" "arm_upper_R_connect" bone "root" "arm_upper_R" //COPY_TRANSFORMS
+bone "my_csgo_rig" "arm_lower_R_connect" bone "root" "arm_lower_R" //COPY_TRANSFORMS
+bone "my_csgo_rig" "R_Hand_FK_CTRL" bone "root" "hand_R" //COPY_TRANSFORMS
+
+bone "my_csgo_rig" "R_ARM_UPPER_TWIST_1" bone "root" "arm_upper_R_TWIST" //COPY_TRANSFORMS
+bone "my_csgo_rig" "R_ARM_UPPER_TWIST_2" bone "root" "arm_upper_R_TWIST1" //COPY_TRANSFORMS
+
+bone "my_csgo_rig" "R_ARM_LOWER_TWIST_1" bone "root" "arm_lower_R_TWIST" //COPY_TRANSFORMS
+bone "my_csgo_rig" "R_ARM_LOWER_TWIST_2" bone "root" "arm_lower_R_TWIST1" //COPY_TRANSFORMS
+
+
+
+
+
+// fingers
+// LEFT
+bone "my_csgo_rig" "L_FINGER_Thumb_0" bone "root" "finger_thumb_0_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Thumb_1" bone "root" "finger_thumb_1_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Thumb_2" bone "root" "finger_thumb_2_L" //COPY_ROTATION
+
+bone "my_csgo_rig" "L_FINGER_Index_Meta" bone "root" "finger_index_meta_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Index_0" bone "root" "finger_index_0_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Index_1" bone "root" "finger_index_1_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Index_2" bone "root" "finger_index_2_L" //COPY_ROTATION
+
+bone "my_csgo_rig" "L_FINGER_Middle_Meta" bone "root" "finger_middle_meta_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Middle_0" bone "root" "finger_middle_0_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Middle_1" bone "root" "finger_middle_1_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Middle_2" bone "root" "finger_middle_2_L" //COPY_ROTATION
+
+bone "my_csgo_rig" "L_FINGER_Ring_Meta" bone "root" "finger_ring_meta_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Ring_0" bone "root" "finger_ring_0_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Ring_1" bone "root" "finger_ring_1_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Ring_2" bone "root" "finger_ring_2_L" //COPY_ROTATION
+
+bone "my_csgo_rig" "L_FINGER_Pinky_Meta" bone "root" "finger_pinky_meta_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Pinky_0" bone "root" "finger_pinky_0_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Pinky_1" bone "root" "finger_pinky_1_L" //COPY_ROTATION
+bone "my_csgo_rig" "L_FINGER_Pinky_2" bone "root" "finger_pinky_2_L" //COPY_ROTATION
+
+
+
+// RIGHT
+bone "my_csgo_rig" "R_FINGER_Thumb_0" bone "root" "finger_thumb_0_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Thumb_1" bone "root" "finger_thumb_1_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Thumb_2" bone "root" "finger_thumb_2_R" //COPY_ROTATION
+
+bone "my_csgo_rig" "R_FINGER_Index_Meta" bone "root" "finger_index_meta_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Index_0" bone "root" "finger_index_0_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Index_1" bone "root" "finger_index_1_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Index_2" bone "root" "finger_index_2_R" //COPY_ROTATION
+
+bone "my_csgo_rig" "R_FINGER_Middle_Meta" bone "root" "finger_middle_meta_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Middle_0" bone "root" "finger_middle_0_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Middle_1" bone "root" "finger_middle_1_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Middle_2" bone "root" "finger_middle_2_R" //COPY_ROTATION
+
+bone "my_csgo_rig" "R_FINGER_Ring_Meta" bone "root" "finger_ring_meta_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Ring_0" bone "root" "finger_ring_0_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Ring_1" bone "root" "finger_ring_1_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Ring_2" bone "root" "finger_ring_2_R" //COPY_ROTATION
+
+bone "my_csgo_rig" "R_FINGER_Pinky_Meta" bone "root" "finger_pinky_meta_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Pinky_0" bone "root" "finger_pinky_0_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Pinky_1" bone "root" "finger_pinky_1_R" //COPY_ROTATION
+bone "my_csgo_rig" "R_FINGER_Pinky_2" bone root" "finger_pinky_2_R" //COPY_ROTATION
+
+
+end
