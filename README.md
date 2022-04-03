@@ -1,5 +1,5 @@
 # Blender CSGO Rigger tool
-Blender Addon for Auto Created Rigs for CSGO Models!
+Blender Addon for Auto Create Rigs for CSGO Models!
 
 # Wont work without
 Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Source_Tools
