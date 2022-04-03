@@ -65,10 +65,10 @@ class CSGO_OP_SeriesCharacter_Rigging(Operator):
         # input
         #PLAYERS_FOLDER = 'D:/DarkAssembler/Edits/Shadows/Content/csgo content/smd/models/player/custom_player/legacy'
         #EXPORT_FOLDER = 'D:/DarkAssembler/Edits/Shadows/scripts/csgo rig/csgo_blender_rig/export csgo players'
-        PLAYERS_FOLDER = self.op_prop_PLAYER_FOLDER
-        EXPORT_FOLDER = self.op_prop_EXPORT_FOLDER
-        print(PLAYERS_FOLDER)
-        print(EXPORT_FOLDER)
+        PLAYERS_FOLDER = (self.op_prop_PLAYER_FOLDER.replace('\\','/'))[:len(self.op_prop_PLAYER_FOLDER)-1] if self.op_prop_PLAYER_FOLDER else None
+        EXPORT_FOLDER = (self.op_prop_EXPORT_FOLDER.replace('\\','/'))[:len(self.op_prop_EXPORT_FOLDER)-1] if self.op_prop_EXPORT_FOLDER else None
+        print('import_folder= ', PLAYERS_FOLDER)
+        print('export_folder= ', EXPORT_FOLDER)
         print('read done')
 
         if PLAYERS_FOLDER == '' or PLAYERS_FOLDER == None:
@@ -98,6 +98,8 @@ class CSGO_OP_SeriesCharacter_Rigging(Operator):
             character_folder = PLAYERS_FOLDER + '/'+player
             # Clear BPY.DATA
             self.delete_from_bpy()
+
+            print('character processs... for: ', character_folder)
 
             if len(bpy.data.scenes) != 1:
                 for i, s in bpy.data.scenes.items():
