@@ -38,4 +38,4 @@ Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Source_Tool
 ![image](https://github.com/mpsterprod/Blender-CSGO-Rigger/blob/master/misc/rig_character_screenshot.png)
 
 # Warning
-This tool VERSION support ONLY FOR CHARACTER!
+This tool VERSION support ONLY FOR CHARACTERS!
