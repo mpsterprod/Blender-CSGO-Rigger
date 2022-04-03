@@ -1,5 +1,5 @@
-# Source Blender Exporter
-Tool created to convert models from qc/smd to fbx for Blender 2.8+
+# Blender CSGO Rigger tool
+Blender Addon for Auto Created Rigs for CSGO Models!
 
 # Wont work without
 Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Source_Tools
