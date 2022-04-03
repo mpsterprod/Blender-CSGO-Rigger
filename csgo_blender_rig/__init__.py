@@ -280,7 +280,6 @@ class CSGO_OP_SeriesCharacter_Rigging(Operator):
                 filepath=EXPORT_FOLDER+'/'+character_name+'/'+'Rig_'+character_name+'.blend'
             )
         
-            break
     
         self.delete_from_bpy()
         print('------> Rigging done!')
