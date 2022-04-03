@@ -39,4 +39,5 @@ Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Source_Tool
 
 # Warning
 Character rig only for `\models\player\custom_player\legacy\` MODELS! // old models not support this version!
+
 This tool VERSION support ONLY FOR CHARACTERS!
