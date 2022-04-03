@@ -7,7 +7,7 @@ Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Source_Tool
 # Setup
 * 1 Open Blender preferences/addons
 * 2 Click install 
-* 3 select script mpSourceExporter.zip/open and activate it
+* 3 select script mp_csgo_rigging.zip/open and activate it
 
 # How it works
 * 1 Goto to in the viewport, on the right side of the panel, the `CSGO` category
