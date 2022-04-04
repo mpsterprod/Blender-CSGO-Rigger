@@ -186,6 +186,28 @@ class CSGO_OP_SeriesCharacter_Rigging(Operator):
                     bpy.data.collections[rig_collections[1]].objects.link(scene.objects[i])
                     scene.collection.objects.unlink(scene.objects[i])
 
+            # create folder
+            self.create_folder(EXPORT_FOLDER+'/'+character_name+'/')
+
+            self.select(scene, False)
+
+            print('EXPORT_PATH=  ', EXPORT_FOLDER+'/'+character_name+'/'+'SkeletalMesh_'+character_name+'.fbx')
+
+            # export SkeletalMesh .FBX
+            for name, obj in bpy.data.objects.items():
+                self.select(scene, False)
+                bpy.data.objects['root'].select_set(True)
+                if obj.type == 'MESH':
+                    obj.select_set(True)
+                    bpy.ops.export_scene.fbx(
+                        filepath=EXPORT_FOLDER+'/'+character_name+'/'+'SkeletalMesh_'+obj.name+'.fbx',
+                        bake_anim=False,
+                        use_selection=True
+                    )
+
+            self.select(scene, False)
+
+
             # import rig
             #auto_blender_csgo_rig.build_rig("my_csgo_rig", rig_collections[0], 'root')
             #bpy.ops.view3d.toggle_xray()
@@ -226,28 +248,6 @@ class CSGO_OP_SeriesCharacter_Rigging(Operator):
                     bpy.data.collections.remove(bpy.data.collections['Appended Data'])
                     break
 
-
-            # create folder
-            self.create_folder(EXPORT_FOLDER+'/'+character_name+'/')
-
-            self.select(scene, False)
-
-            # export SkeletalMesh .FBX - потому что полевектор может изменить позу(
-            for name, obj in bpy.data.objects.items():
-                if obj.type == 'MESH':
-                    obj.select_set(True)
-            
-            bpy.data.objects['root'].select_set(True)
-
-            print('EXPORT_PATH=  ', EXPORT_FOLDER+'/'+character_name+'/'+'SkeletalMesh_'+character_name+'.fbx')
-
-            bpy.ops.export_scene.fbx(
-                filepath=EXPORT_FOLDER+'/'+character_name+'/'+'SkeletalMesh_'+character_name+'.fbx',
-                bake_anim=False,
-                use_selection=True
-            )
-
-            self.select(scene, False)
 
             # connect skeleton to rig
             if USED_CUSTOM_RIG:
