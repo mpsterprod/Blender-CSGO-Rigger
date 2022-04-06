@@ -242,10 +242,13 @@ class CSGO_OP_SeriesCharacter_Rigging(Operator):
                     # link to character collection
                     bpy.data.collections[rig_collections[0]].children.link(bpy.data.collections[name])
                     # unlink from scene and `Appended Data`
-                    for n, c in bpy.data.collections['Appended Data'].children.items():
-                        bpy.data.collections['Appended Data'].children.unlink(bpy.data.collections[n])
-                    # remove this collection
-                    bpy.data.collections.remove(bpy.data.collections['Appended Data'])
+                    for cad, cad_value in bpy.data.collections.items():
+                        if cad == 'Appended Data':
+                            for n, c in bpy.data.collections['Appended Data'].children.items():
+                                bpy.data.collections['Appended Data'].children.unlink(bpy.data.collections[n])
+                            # remove this collection
+                            bpy.data.collections.remove(bpy.data.collections['Appended Data'])
+                            break
                     break
 
 
