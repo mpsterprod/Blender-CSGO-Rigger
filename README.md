@@ -24,6 +24,8 @@ Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Source_Tool
 * -> `SkeletalMesh_NameCharacter.fbx` - for import to Game Engine (Unreal Engine and other)
 * -> `rig_NameCharacter.blend` - this blender rig file
 
+![image](https://github.com/mpsterprod/Blender-CSGO-Rigger/blob/master/misc/skeletal_mesh.png)
+
 # * CUSTOM USER RIG
 * 1 specify names
 * 2 specify Python Connection script in your USER_RIG.blend
