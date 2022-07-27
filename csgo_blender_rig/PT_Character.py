@@ -108,6 +108,13 @@ class CSGO_OP_CharacterBuild(Operator):
             if not self.fix_skeletalMesh_Scale(scene):
                 continue
 
+            # create root bone
+            for n, obj in scene.objects.items():
+                if obj.type == 'ARMATURE':
+                    obj.name = 'Armature'
+                    break
+            self.__create_root(armature_name='Armature')
+
             ##########################################
                     # EXPORT SKELETAL MESH #
             ##########################################
@@ -116,11 +123,11 @@ class CSGO_OP_CharacterBuild(Operator):
             for n, obj in scene.objects.items():
                 if obj.type == 'ARMATURE':
                     deform_armature_name = n
-                    obj.name = 'Armature' # blemdifi fbx fail XD....
                     obj.select_set(True)
                 elif obj.type == 'MESH':
                     meshes.append(n)
                     obj.select_set(True)
+            #break
         
             # make folder 
             CHARACTER_FOLDER = self.make_folder(filepath=EXPORT_FOLDER+'/'+character_name+'/')
@@ -359,7 +366,61 @@ class CSGO_OP_CharacterBuild(Operator):
         if not os.path.exists(directory):
             os.makedirs(directory)
         return directory
+
+    def __create_root(self, armature_name):
+        print('in create root')
+
+        scene = bpy.context.scene
         
+        self.__select(scene, False)
+        bpy.context.view_layer.objects.active = None
+        
+        armature = scene.objects[armature_name]
+        
+        armature.select_set(True)
+        bpy.context.view_layer.objects.active = armature
+        bpy.context.view_layer.update()
+        
+        print('start edit armature')
+        
+        bpy.ops.object.mode_set(mode='EDIT')
+    
+        if not self.__key_in_dict(armature.data.edit_bones.items(), 'root'):
+            #add bone
+            bone = armature.data.edit_bones.new(name='root')
+            bone.head = [0.0, 0.0, 0.0]
+            bone.tail = [0.0, 0.0, 1.0]
+            print('in edit mode and check root bone')
+    
+        # set parent to `root`
+        for name, bone in armature.data.edit_bones.items():
+            if name != 'root' and bone.parent==None:
+                bone.parent = armature.data.edit_bones['root']
+        print('set parent bones')
+        
+        # disconnect all bones!
+        for n, bone in armature.data.edit_bones.items():
+            bone.use_connect = False
+        print('disconnect bones done!')
+        
+        bpy.context.view_layer.update()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+    def __select(self, scene, value):
+        for i in scene.objects.items():
+            i[1].select_set(value)
+        
+    def __key_in_dict(self, data, value):
+        print('in find')
+        yes = False
+        for key, obj in data:
+            if key == value:
+                yes = True
+                break
+        return yes
+        
+    
     
 class CSGO_PT_Character_Panel(Panel):
     bl_label = 'CSGO Character Rig'
