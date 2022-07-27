@@ -116,6 +116,7 @@ class CSGO_OP_CharacterBuild(Operator):
             for n, obj in scene.objects.items():
                 if obj.type == 'ARMATURE':
                     deform_armature_name = n
+                    obj.name = 'Armature' # blemdifi fbx fail XD....
                     obj.select_set(True)
                 elif obj.type == 'MESH':
                     meshes.append(n)
