@@ -10,6 +10,9 @@ Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Source_Tool
 * 3 select script `mp_csgo_rigging.zip`/open and activate it
 
 # How it works
+
+* Default MP RIG
+
 * 1 Goto to in the viewport, on the right side of the panel, the `CSGO` category
 * 2 Set Player Folder your decompiled files `.smd` files`-->> \models\player\custom_player\legacy\`
 * 3 Set Export folder
@@ -20,6 +23,12 @@ Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Source_Tool
 * -> the script creates a folder with the name of the character
 * -> `SkeletalMesh_NameCharacter.fbx` - for import to Game Engine (Unreal Engine and other)
 * -> `rig_NameCharacter.blend` - this blender rig file
+
+* CUSTOM USER RIG
+* 1 specify names
+* 2 specify Python Connection script in your USER_RIG.blend
+
+# Rules Python Script
 
 # Export Animation
 `DONT RENAME ARMATURE OBJECT` -> `root` <- only
