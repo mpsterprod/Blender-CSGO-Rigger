@@ -10,7 +10,6 @@ bl_info = {
     "category": "Animation"
 }
 
-from ast import operator
 import bpy
 from bpy.types import (
     AddonPreferences,
