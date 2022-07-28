@@ -11,7 +11,7 @@ Blender Source Tool https://developer.valvesoftware.com/wiki/Blender_Source_Tool
 
 # How it works
 
-# * Default MP RIG
+# * MP Default RIG
 
 * 1 Goto to in the viewport, on the right side of the panel, the `CSGO` category
 * 2 Set Player Folder your decompiled files `.smd` files`-->> \models\player\custom_player\legacy\`
