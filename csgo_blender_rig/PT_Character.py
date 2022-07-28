@@ -127,7 +127,6 @@ class CSGO_OP_CharacterBuild(Operator):
                 elif obj.type == 'MESH':
                     meshes.append(n)
                     obj.select_set(True)
-            #break
         
             # make folder 
             CHARACTER_FOLDER = self.make_folder(filepath=EXPORT_FOLDER+'/'+character_name+'/')
