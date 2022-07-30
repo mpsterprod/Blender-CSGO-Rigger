@@ -211,9 +211,15 @@ class CSGO_OP_CharacterBuild(Operator):
                 )
                 # fix `Append Data`
                 scene.collection.children.link(bpy.data.collections[DEFAULT_RIG_COLLECTION])
-                bpy.data.collections['Appended Data'].children.unlink(bpy.data.collections[DEFAULT_RIG_COLLECTION])
 
-                bpy.data.collections.remove(bpy.data.collections['Appended Data'])
+                for n, c in bpy.data.collections.items():
+                    if n == 'Appended Data':
+                        try:
+                            bpy.data.collections['Appended Data'].children.unlink(bpy.data.collections[DEFAULT_RIG_COLLECTION])
+                            bpy.data.collections.remove(bpy.data.collections['Appended Data'])
+                        except KeyError as k:
+                            print('not unlink and delete Appended Data', k)
+                        break
 
                 # append script
                 bpy.ops.wm.append(      # BUILD SCRIPT
