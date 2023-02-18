@@ -85,6 +85,7 @@ csgo_rig_build(character_name='', rig_collection_name='', rig_armature_name='', 
 * Click F3 and find ```Bake Action```
 * Use only for selected bones
 * Go to OBJECT MODE
+* Rename this armature object as `root`
 # * 2 EXPORT
 * Select deform Armature
 * Set Settings:
